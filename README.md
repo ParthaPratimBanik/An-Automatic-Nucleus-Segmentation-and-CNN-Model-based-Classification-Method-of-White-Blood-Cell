@@ -1,7 +1,16 @@
 # An Automatic Nucleus Segmentation and CNN Model based Classification Method of White Blood Cell
-Here is the code of this "An Automatic Nucleus Segmentation and CNN Model based Classification Method of White Blood Cell" journal article. WBC Nucleus Segmentation method is developed on BCCD, ALL-IDB2, JTSC, and CellaVision database and a new CNN model is designed on BCCD database.
+## **Overview:**
+This work is about the WBC (leukocyte) nucleus segmentation, localization and a new CNN model based classification of four types of WBCs (leukocytes).The complete description of the nucleus segmentation algorithm, localization and CNN model can be found [here](https://www.sciencedirect.com/science/article/abs/pii/S0957417420300373 "An Automatic Nucleus Segmentation and CNN Model based Classification Method of White Blood Cell"). Here is the summary of the work:
+* Developed a generalized algorithm for WBC nucleus segmentation and valided on four WBC public datasets.
+* The WBC (leukocyte) is localized based on the statistical analysis of nucleus and WBC ratio.
+* A new CNN model is designed to classify four types of localized and cropped WBC (leukocyte) image.
 
-## WBC Nucleus Segmentation-based Localization
-- The WBC nucleus is segmented using the information of different color spaces and several MATLAB image processing functions (the functions can be found in the .m file). After nucleus segmentation, based on the statistical survey of nucleus and WBC ratio, the WBC is localized into the blood smear image.
 
-- To feed the localized WBCs to the CNN model (for training), the localized WBCs are cropped with an approximate resolution from the blood smear image and saved to a folder.
+The code of WBC nucleus segmentation, localization and cropping method are shared in *"wbc_nucleus_seg_localz"* directory. Please see the code and run it on MATLAB (Recommended Version: MATLAB 2017a or 2019a or above).
+
+The code of the dataset generation of cropped WBC image, training of CNN modeland inference of the trained model are shared in *"wbc_classif_cnn_model"* directory.
+
+## **Limitations:**
+1. The proposed WBC nucleus and localization method cannot segment and localize joint WBCs.
+2. The purpose of the proposed localization method is to focus only on WBC cell not other property of blood (*e.g. RBC, platelets, plasma etc.*) but sometimes it localizes WBC with other blood cells (*ie. mostly happens in BCCD dataset)*.
+3. The performance of the proposed CNN model is sensitive to the input image resolution and the height-width ratio of WBC nucleus and WBC (*i.e. explained in "crop_seg_wbc.m" file*).
