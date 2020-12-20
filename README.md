@@ -11,6 +11,6 @@ The code of WBC nucleus segmentation, localization and cropping method are share
 The code of the dataset generation of cropped WBC image, training of CNN modeland inference of the trained model are shared in *"wbc_classif_cnn_model"* directory.
 
 ## **Limitations:**
-1. The proposed WBC nucleus and localization method cannot segment and localize joint WBCs.
-2. The purpose of the proposed localization method is to focus only on WBC cell not other property of blood (*e.g. RBC, platelets, plasma etc.*) but sometimes it localizes WBC with other blood cells (*ie. mostly happens in BCCD dataset)*.
-3. The performance of the proposed CNN model is sensitive to the input image resolution and the height-width ratio of WBC nucleus and WBC (*i.e. explained in "crop_seg_wbc.m" file*).
+1. The proposed WBC nucleus and localization method cannot segment and localize __joint WBCs__.
+2. The purpose of the proposed localization method is to focus only on WBC cell not other property of blood (e.g. *RBC, platelets, plasma etc.*) but sometimes it localizes WBC with other blood cells (i.e. *sometime occurs in __Lymphocyte__ and __Monocyte__ types WBC image*).
+3. The performance of the proposed CNN model is sensitive to the input image resolution and the height-width ratio of WBC nucleus and WBC (i.e. *explained in "__crop_seg_wbc.m__" and "__nuc_wbc_ratio_datasets.m__" file*).
