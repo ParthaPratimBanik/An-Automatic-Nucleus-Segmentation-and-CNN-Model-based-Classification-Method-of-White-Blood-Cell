@@ -5,4 +5,4 @@ The CNN model is proposed based on the BCCD dataset. The dataset is consisted of
 - The images of that file are grouped in training and testing set.
 - We load the __.npz__ file and feed the images to the CNN model for training and testing.
 
->Note: The details of the proposed CNN model can be found in this [manuscript](https://www.sciencedirect.com/science/article/abs/pii/S0957417420300373 "An Automatic Nucleus Segmentation and CNN Model based Classification Method of White Blood Cell"). Please take a look on it.
+>Note: __The details of the proposed CNN model can be found in this [manuscript](https://www.sciencedirect.com/science/article/abs/pii/S0957417420300373 "An Automatic Nucleus Segmentation and CNN Model based Classification Method of White Blood Cell"). Please take a look on it__.
