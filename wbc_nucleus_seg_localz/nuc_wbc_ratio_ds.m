@@ -1,6 +1,6 @@
 clc;clear;format compact;warning off;
 
-%% Database Name
+%% Dataset Name
 databaseName = {'BCCD', 'JTSC', 'ALL-IDB2', 'CellaVision'};
 folder_types = {'Input', 'Ground Truth'};
 ds_folder_name = 'Datasets';
@@ -14,7 +14,7 @@ opts.Interpreter = 'tex';
 opts.Resize = 'on';
 answer = inputdlg(prompt,dlgtitle,[1 100],definput,opts);
 
-%% Folder Name and creating the folder to save Cropped Image
+%% Checking the input is valid or not
 if isempty(answer)
     warning_mess = sprintf('\nNo input is given\nPlease write one of the database name, shown below:\nBCCD, ALL-IDB2, JTSC, CellaVision.');
     error(warning_mess);  
@@ -30,7 +30,7 @@ for dbnv=1:length(databaseName)
     end
 end
 
-%% Read and estimates the WBC:nucleus of all Ground Truth (GT) Images for the input dataset
+%% Storing the name of all Ground Truth (GT) Images for a input dataset
 currDir = pwd;
 gt_imgAddr = [currDir, '\', ds_folder_name, '\', folder_types{2}, '\', answer{:}];
 D = dir(gt_imgAddr);  % or jpeg or whatever.
@@ -54,7 +54,8 @@ f = uifigure;
 d = uiprogressdlg(f,'Title','Progressing...','Message','0','Cancelable','on');
 
 ratio_wbc_nuc=zeros(length(L_gt),1);
-%% Segmentation Processing for all images
+
+%% Measuring WBC and Nucleus ratio for a input dataset
 for k=1:length(L_gt)
     gt_img = imread([gt_imgAddr, '\', L_gt{k}]);
     [~,~,chn] = size(gt_img);

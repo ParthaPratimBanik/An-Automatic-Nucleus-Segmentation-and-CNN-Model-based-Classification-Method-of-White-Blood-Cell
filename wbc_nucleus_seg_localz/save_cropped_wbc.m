@@ -38,26 +38,26 @@ for dbnv=1:length(databaseName)
 end
 
 folderName = {[answer{:}, '_seg_cropped_img']};
-if ~isfolder(folderName{:})
+if ~isdir(folderName{:})
     mkdir(folderName{:});
 else
     fprintf('\nfolder %s already exists.', folderName{:});
 end
 
-
 %% loading database
 load([answer{:},'.mat'])
 
-%% in_img taking
+%% input image taking from cell type mat file
 in_img_cell = img_db_wbc(:,2);
 
 
+%% Now cropped the input image of the input dataset and saved the cropped image to the directory 
 for i=1:length(in_img_cell)
-    %% Applying nuclei segmentaion Method
+    %% Applying proposed nuclei segmentaion method
     seg_nuc_log = nuclei_seg(in_img_cell{i}, ClusrNo, disc_rad(dbnv));
 %     imshow(seg_nuc_log);
     
-    %% Applying Cropping Method
+    %% Applying proposed cropping method
     cropped_wbc = crop_seg_wbc(in_img_cell{i}, seg_nuc_log, hwrTh(dbnv));
     
     %% For Showing Cropped Images
