@@ -34,4 +34,6 @@ The following steps are recommended for using the code.
 <br>
 <br>
 
+The full code is coming soon ...........
+
 >Note: __The details of the proposed CNN model can be found in this [manuscript](https://www.sciencedirect.com/science/article/abs/pii/S0957417420300373 "An Automatic Nucleus Segmentation and CNN Model based Classification Method of White Blood Cell"). Please take a look on it__.
