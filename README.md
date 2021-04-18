@@ -8,7 +8,7 @@ This work is about the WBC (leukocyte) nucleus segmentation, localization and a 
 
 The code of WBC nucleus segmentation, localization and cropping method are shared in *"wbc_nucleus_seg_localz"* directory. Please see the code and run it on MATLAB (Recommended Version: MATLAB 2017a or 2019a or above).
 
-The code of the dataset generation of cropped WBC image, training of CNN modeland inference of the trained model are shared in *"wbc_classif_cnn_model"* directory.
+The code of the dataset generation of cropped WBC image, training of CNN model and inference of the trained model are shared in *"wbc_classify_cnn_model"* directory.
 
 ## **Limitations:**
 1. The proposed WBC nucleus and localization method cannot segment and localize __joint WBCs__.
