@@ -1,5 +1,5 @@
 ## CNN Model-based 4 types of WBC (leukocytes) Classification
-The CNN model is proposed based on the __BCCD__ ([Blood Cell Count and Detection](https://github.com/Shenggan/BCCD_Dataset "BCCD")) dataset. The dataset is consisted of four types of WBC images: __Neutrophil__, __Eosinophil__, __Monocyte__ and __Lymphocyte__. The dataset is collected from [here](https://www.kaggle.com/paultimothymooney/blood-cells/ "Blood Cell Images"). The dataset is divided in two folders: __dataset-master__ and it is __dataset2-master__. The __dataset-master__ folder is contained about <b>366 JPEG</b> images with the labeling of class of each image in <b>.CSV</b> file. The <b>dataset2-master</b> folder is contained <b>12444 augmented</b> images. To train the proposed CNN model, the above dataset is refined in such a way so that the model cannot be trained by any unusual WBC image.
+The CNN model is proposed based on the <b>BCCD</b> ([Blood Cell Count and Detection](https://github.com/Shenggan/BCCD_Dataset "BCCD")) dataset. The dataset is consisted of four types of WBC images: <b>Neutrophil</b>, <b>Eosinophil</b>, <b>Monocyte</b> and <b>Lymphocyte</b>. The dataset is collected from [here](https://www.kaggle.com/paultimothymooney/blood-cells/ "Blood Cell Images"). The dataset is divided in two folders: <b>dataset-master</b> and it is <b>dataset2-master</b>. The <b>dataset-master</b> folder is contained about <b>366 JPEG</b> images with the labeling of class of each image in <b>.CSV</b> file. The <b>dataset2-master</b> folder is contained <b>12444 augmented</b> images. To train the proposed CNN model, the above dataset is refined in such a way so that the model cannot be trained by any unusual WBC image.
 
 First, the WBC images of <b>dataset-master</b> folder are examined and 15 images are found that are contained 2 WBCs. These 15 images are removed from the dataset. Because, there have no location-based exact indication of the class of 2 WBCs contained images in the <b>.CSV</b> file. Besides, there are 3 Basophil type WBC image. As <b>Basophil</b> type WBC image is out of consideration for this work, so those <b>3 Basophil</b> type WBC images are also removed. And also, 1 Monocyte type WBC image (<i>BloodImage_00116.jpg</i>) is missing in the <b>JPEGImages</b> folder, although the image is mentioned in <b>.CSV</b> file. So in total, `366-15-3-1 = 347` WBC images are considered from <b>dataset-master</b> folder.
 
@@ -12,10 +12,10 @@ As the second step, the augmented WBC images are examined for <b>dataset2-master
     <td><span style="font-size: 15pt;"><ins>Lymphocyte</ins></span></td>
   </tr>
   <tr align="center" valign="center">
-    <td><img src="G:\My Drive\My_Github_Repo\An-Automatic-Nucleus-Segmentation-and-CNN-Model-based-Classification-Method-of-White-Blood-Cell\wbc_classify_cnn_model\augmented_wbc_won\Neutrophil_WON\_23_654.jpeg" style="width:100%"></td>
-    <td><img src="G:\My Drive\My_Github_Repo\An-Automatic-Nucleus-Segmentation-and-CNN-Model-based-Classification-Method-of-White-Blood-Cell\wbc_classify_cnn_model\augmented_wbc_won\Neutrophil_WON\_141_7403.jpeg" style="width:100%"></td>
-    <td><img src="G:\My Drive\My_Github_Repo\An-Automatic-Nucleus-Segmentation-and-CNN-Model-based-Classification-Method-of-White-Blood-Cell\wbc_classify_cnn_model\augmented_wbc_won\Lymphocyte_WON\_18_5780.jpeg" style="width:100%"></td>
-    <td><img src="G:\My Drive\My_Github_Repo\An-Automatic-Nucleus-Segmentation-and-CNN-Model-based-Classification-Method-of-White-Blood-Cell\wbc_classify_cnn_model\augmented_wbc_won\Lymphocyte_WON\_5_9697.jpeg" style="width:100%"></td>
+    <td><img src="augmented_wbc_won\Neutrophil_WON\_23_654.jpeg" style="width:100%"></td>
+    <td><img src="augmented_wbc_won\Neutrophil_WON\_141_7403.jpeg" style="width:100%"></td>
+    <td><img src="augmented_wbc_won\Lymphocyte_WON\_18_5780.jpeg" style="width:100%"></td>
+    <td><img src="augmented_wbc_won\Lymphocyte_WON\_5_9697.jpeg" style="width:100%"></td>
   </tr>
 </table>
 
